@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+.font-pixel-title {
+  font-family: 'Press Start 2P', monospace, sans-serif;
+  letter-spacing: -0.05em;
+}
+
+.font-pixel-body {
+  font-family: 'VT323', monospace, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.pixel-art {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Custom Minecraft-style beveled stone and wood borders */
+.pixel-box-stone {
+  background-color: #52525b;
+  border-top: 4px solid #a1a1aa;
+  border-left: 4px solid #a1a1aa;
+  border-right: 4px solid #27272a;
+  border-bottom: 4px solid #27272a;
+  box-shadow: inset 2px 2px 0px #71717a, inset -2px -2px 0px #18181b, 0 4px 0 #09090b;
+}
+
+@media (max-width: 640px) {
+  .pixel-box-stone {
+    border-top-width: 3px;
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    box-shadow: inset 1px 1px 0px #71717a, inset -1px -1px 0px #18181b, 0 3px 0 #09090b;
+  }
+  .pixel-btn {
+    border-top-width: 3px;
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-bottom-width: 3px;
+    box-shadow: 0 3px 0 #18181b;
+  }
+}
+
+.pixel-box-stone-light {
+  background-color: #71717a;
+  border-top: 4px solid #d4d4d8;
+  border-left: 4px solid #d4d4d8;
+  border-right: 4px solid #3f3f46;
+  border-bottom: 4px solid #3f3f46;
+  box-shadow: inset 2px 2px 0px #a1a1aa, inset -2px -2px 0px #27272a, 0 4px 0 #18181b;
+}
+
+.pixel-box-wood {
+  background-color: #78350f;
+  border-top: 4px solid #b45309;
+  border-left: 4px solid #b45309;
+  border-right: 4px solid #451a03;
+  border-bottom: 4px solid #451a03;
+  box-shadow: inset 2px 2px 0px #92400e, inset -2px -2px 0px #290e02, 0 4px 0 #1c0a02;
+}
+
+.pixel-btn {
+  position: relative;
+  background-color: #71717a;
+  border-top: 4px solid #d4d4d8;
+  border-left: 4px solid #d4d4d8;
+  border-right: 4px solid #27272a;
+  border-bottom: 4px solid #27272a;
+  box-shadow: 0 4px 0 #18181b;
+  transition: transform 0.05s ease, box-shadow 0.05s ease;
+  user-select: none;
+}
+
+.pixel-btn:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+
+.pixel-btn:active:not(:disabled) {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #18181b;
+}
+
+.pixel-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: grayscale(0.8);
+}
+
+.pixel-btn-green {
+  background-color: #4d7c0f;
+  border-top: 4px solid #84cc16;
+  border-left: 4px solid #84cc16;
+  border-right: 4px solid #1a2e05;
+  border-bottom: 4px solid #1a2e05;
+  box-shadow: 0 4px 0 #0f172a;
+}
+
+.pixel-btn-gold {
+  background-color: #ca8a04;
+  border-top: 4px solid #fde047;
+  border-left: 4px solid #fde047;
+  border-right: 4px solid #713f12;
+  border-bottom: 4px solid #713f12;
+  box-shadow: 0 4px 0 #451a03;
+}
+
+.pixel-btn-blue {
+  background-color: #0284c7;
+  border-top: 4px solid #38bdf8;
+  border-left: 4px solid #38bdf8;
+  border-right: 4px solid #0c4a6e;
+  border-bottom: 4px solid #0c4a6e;
+  box-shadow: 0 4px 0 #082f49;
+}
+
+.pixel-btn-red {
+  background-color: #b91c1c;
+  border-top: 4px solid #f87171;
+  border-left: 4px solid #f87171;
+  border-right: 4px solid #450a0a;
+  border-bottom: 4px solid #450a0a;
+  box-shadow: 0 4px 0 #2a0808;
+}
+
+/* Clouds floating animation */
+@keyframes floatClouds {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-clouds {
+  animation: floatClouds 60s linear infinite;
+}
+
+/* Walking character leg animation */
+@keyframes walkLegLeft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@keyframes walkLegRight {
+  0%, 100% { transform: translateY(-3px); }
+  50% { transform: translateY(0); }
+}
+
+.anim-walk-left {
+  animation: walkLegLeft 0.5s infinite steps(2);
+}
+
+.anim-walk-right {
+  animation: walkLegRight 0.5s infinite steps(2);
+}
+
+/* Custom pixelated scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #27272a;
+}
+::-webkit-scrollbar-thumb {
+  background: #71717a;
+  border: 2px solid #3f3f46;
+}

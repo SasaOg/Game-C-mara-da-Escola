@@ -1,0 +1,8 @@
+{
+  "name": "Câmara da Escola",
+  "description": "Simulação multiplayer em pixel art 2D onde estudantes atuam como deputados para distribuir o orçamento de R$ 1 milhão da Escola MM.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
